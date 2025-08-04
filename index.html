@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helpful Links for Staff</title>
+    <title>Helpful Links for Team Mando</title>
     
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,6 +15,9 @@
     
     <!-- Lucide Icons for clean icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- QR Code Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 
     <style>
         body {
@@ -67,7 +70,7 @@
             </h1>
             <p class="text-lg text-slate-600 dark:text-slate-400">
                 <!-- Subtitle -->
-                A hub for important mobile resources and activation guides.
+                Team Mando's Hub
             </p>
         </header>
 
@@ -90,7 +93,7 @@
                         <div class="flex items-center mb-3"><div class="bg-sky-100 dark:bg-sky-900/50 p-2 rounded-lg mr-4"><i data-lucide="phone-forwarded" class="text-sky-600 dark:text-sky-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Carrier Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Identify the carrier for a specific phone number.</p>
                     </a>
                     <a href="https://www.xfinityincentivetracker.com/track" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3"><div class="bg-violet-100 dark:bg-violet-900/50 p-2 rounded-lg mr-4"><i data-lucide="gift" class="text-violet-600 dark:text-violet-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Gift Card Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Track the status of your Xfinity incentive.</p>
+                        <div class="flex items-center mb-3"><div class="bg-violet-100 dark:bg-violet-900/50 p-2 rounded-lg mr-4"><i data-lucide="gift" class="text-violet-600 dark:text-violet-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Gift Card Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Track the status of a customer's Xfinity incentive.</p>
                     </a>
                 </div>
             </section>
@@ -108,8 +111,9 @@
                     <!-- QR Code Column -->
                     <div class="text-center lg:col-span-1">
                         <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Scan for Setup</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-4">For compatible devices, scan this code with the Camera app to begin.</p>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAAAklEQVR4AewaftIAAAQ/SURBVO3BQW4jSRIEQdNA/f+yR8cBEKxMMsBq23aBv2xp/ZOt9U+21j/ZWu8A9KAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP9MAP" alt="eSIM Activation QR Code" class="mx-auto rounded-lg shadow-md w-48 h-48">
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">E-SIM ACTIVATION QR CODE</p>
+                        <!-- Placeholder for the QR Code -->
+                        <div id="qrcode-container" class="flex justify-center"></div>
                     </div>
                 </div>
             </section>
@@ -129,6 +133,15 @@
                             <div id="msg-result-container" class="hidden relative mt-4 p-4 bg-slate-100 dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600">
                                 <button id="msg-copy-btn" class="absolute top-2 right-2 p-1.5 bg-slate-200 dark:bg-slate-600 rounded-md hover:bg-slate-300 dark:hover:bg-slate-500" title="Copy to clipboard"><i data-lucide="copy" class="h-5 w-5 text-slate-600 dark:text-slate-300"></i></button>
                                 <p id="generated-message" class="whitespace-pre-wrap text-slate-800 dark:text-slate-200"></p>
+                            </div>
+                             <!-- Action Buttons: Mail and Text -->
+                            <div id="msg-actions-container" class="hidden mt-4 space-x-3">
+                                <a id="email-action-btn" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-sky-500 text-white font-semibold rounded-lg shadow-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 dark:focus:ring-offset-slate-900 transition-colors">
+                                    <i data-lucide="mail" class="h-5 w-5 mr-2"></i> Open in Email
+                                </a>
+                                <a id="sms-action-btn" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 dark:focus:ring-offset-slate-900 transition-colors">
+                                    <i data-lucide="message-square" class="h-5 w-5 mr-2"></i> Open as Text
+                                </a>
                             </div>
                             <div id="msg-error-message" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg"></div>
                         </div>
@@ -154,7 +167,7 @@
 
         <!-- Footer -->
         <footer class="text-center mt-16 text-slate-500 dark:text-slate-400">
-            <p>&copy; <span id="year"></span> Your Company Name. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Wild Wild West. All rights reserved.</p>
         </footer>
     </div>
 
@@ -165,8 +178,27 @@
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
         
+        // --- QR Code Generation ---
+        try {
+            const qr = qrcode(0, 'M');
+            // The data for Samsung/Google devices
+            qr.addData('LPA:1$gsmacct.vzw.otgeuicc.com$');
+            qr.make();
+            // Create an image tag and add it to the container
+            const qrImgTag = qr.createImgTag(5, 10); // (cellSize, margin)
+            document.getElementById('qrcode-container').innerHTML = qrImgTag;
+            // Style the generated image
+            const qrImage = document.querySelector('#qrcode-container img');
+            qrImage.style.width = "192px"; // w-48
+            qrImage.style.height = "192px"; // h-48
+            qrImage.classList.add('rounded-lg', 'shadow-md');
+        } catch (e) {
+            console.error("QR Code generation failed:", e);
+            document.getElementById('qrcode-container').textContent = "QR Code could not be generated.";
+        }
+        
         // --- Generic API Call Function ---
-        async function callGemini(prompt, button, loadingSpinner, resultContainer, resultElement, errorElement) {
+        async function callGemini(prompt, button, loadingSpinner, resultContainer, resultElement, errorElement, successCallback) {
             if (!prompt.trim()) {
                 showError("Please enter a topic or issue.", errorElement);
                 return;
@@ -177,6 +209,11 @@
             button.classList.add('opacity-50', 'cursor-not-allowed');
             resultContainer.classList.add('hidden');
             errorElement.classList.add('hidden');
+            if (successCallback) { // Hide action buttons on new generation
+                 const actionsContainer = document.getElementById('msg-actions-container');
+                 if(actionsContainer) actionsContainer.classList.add('hidden');
+            }
+
 
             try {
                 let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
@@ -197,6 +234,9 @@
                     const text = result.candidates[0].content.parts[0].text;
                     resultElement.innerHTML = text.replace(/\n/g, '<br>'); // Use innerHTML to render line breaks
                     resultContainer.classList.remove('hidden');
+                    if (successCallback) {
+                        successCallback(text);
+                    }
                 } else {
                     throw new Error("Received an invalid response from the API.");
                 }
@@ -246,10 +286,21 @@
         const msgLoadingSpinner = document.getElementById('msg-loading-spinner');
         const msgErrorMessage = document.getElementById('msg-error-message');
         const msgCopyBtn = document.getElementById('msg-copy-btn');
+        const msgActionsContainer = document.getElementById('msg-actions-container');
+        const emailActionBtn = document.getElementById('email-action-btn');
+        const smsActionBtn = document.getElementById('sms-action-btn');
+
+        function messageGeneratedSuccess(text) {
+            const encodedText = encodeURIComponent(text);
+            emailActionBtn.href = `mailto:?subject=A message from Comcast Business Mobile&body=${encodedText}`;
+            smsActionBtn.href = `sms:?&body=${encodedText}`; // Using ?&body for iOS compatibility
+            msgActionsContainer.classList.remove('hidden');
+            lucide.createIcons(); // Re-render icons in the new buttons
+        }
 
         generateMsgBtn.addEventListener('click', () => {
             const fullPrompt = `You are a helpful assistant for a Comcast Business Mobile employee. Draft a concise, friendly, and professional SMS message to a customer about the following topic: "${messagePrompt.value.trim()}". The message should be clear and provide a next step if applicable. Do not add a placeholder for the customer's name.`;
-            callGemini(fullPrompt, generateMsgBtn, msgLoadingSpinner, msgResultContainer, generatedMessage, msgErrorMessage);
+            callGemini(fullPrompt, generateMsgBtn, msgLoadingSpinner, msgResultContainer, generatedMessage, msgErrorMessage, messageGeneratedSuccess);
         });
         setupCopyButton(msgCopyBtn, generatedMessage, msgErrorMessage);
 
@@ -264,7 +315,7 @@
 
         generateStepsBtn.addEventListener('click', () => {
             const fullPrompt = `You are an expert mobile support technician for Comcast Business Mobile. A customer is reporting the following issue: "${stepsPrompt.value.trim()}". Provide a numbered list of simple, initial troubleshooting steps an employee can walk the customer through. Keep the steps clear and easy to follow.`;
-            callGemini(fullPrompt, generateStepsBtn, stepsLoadingSpinner, stepsResultContainer, generatedSteps, stepsErrorMessage);
+            callGemini(fullPrompt, generateStepsBtn, stepsLoadingSpinner, stepsResultContainer, generatedSteps, stepsErrorMessage, null); // No success callback needed here
         });
         setupCopyButton(stepsCopyBtn, generatedSteps, stepsErrorMessage);
 
