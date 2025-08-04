@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helpful Links for Team Mando</title>
+    <title>Helpful Links for Mando's Team</title>
     
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -93,7 +93,7 @@
                         <div class="flex items-center mb-3"><div class="bg-sky-100 dark:bg-sky-900/50 p-2 rounded-lg mr-4"><i data-lucide="phone-forwarded" class="text-sky-600 dark:text-sky-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Carrier Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Identify the carrier for a specific phone number.</p>
                     </a>
                     <a href="https://www.xfinityincentivetracker.com/track" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3"><div class="bg-violet-100 dark:bg-violet-900/50 p-2 rounded-lg mr-4"><i data-lucide="gift" class="text-violet-600 dark:text-violet-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Gift Card Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Track the status of a customer's Xfinity incentive.</p>
+                        <div class="flex items-center mb-3"><div class="bg-violet-100 dark:bg-violet-900/50 p-2 rounded-lg mr-4"><i data-lucide="gift" class="text-violet-600 dark:text-violet-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Gift Card Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Track the status of a customer's Gift Card incentive.</p>
                     </a>
                 </div>
             </section>
@@ -167,7 +167,7 @@
 
         <!-- Footer -->
         <footer class="text-center mt-16 text-slate-500 dark:text-slate-400">
-            <p>&copy; <span id="year"></span> Wild Wild West. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Your Company Name. All rights reserved.</p>
         </footer>
     </div>
 
@@ -199,6 +199,17 @@
         
         // --- Generic API Call Function ---
         async function callGemini(prompt, button, loadingSpinner, resultContainer, resultElement, errorElement, successCallback) {
+            // ==================================================================
+            // PASTE YOUR GOOGLE AI API KEY HERE
+            // ==================================================================
+            const apiKey = "AIzaSyAGDUfzP4C_9QvEk7RJjbw4uXHlOMPFQtY"; // <--- KEY PASTED HERE
+            // ==================================================================
+
+            if (!apiKey) {
+                showError("API Key is missing. Please add your Google AI API key in the script.", errorElement);
+                return;
+            }
+
             if (!prompt.trim()) {
                 showError("Please enter a topic or issue.", errorElement);
                 return;
@@ -218,7 +229,6 @@
             try {
                 let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // API key is handled by the environment
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
