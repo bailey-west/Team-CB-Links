@@ -33,6 +33,19 @@
             background-color: #334155; /* slate-700 */
             color: #f1f5f9; /* slate-100 */
         }
+        /* Simple spinner animation */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
@@ -42,76 +55,42 @@
 
         <!-- Header Section -->
         <header class="text-center mb-12">
+            <!-- Comcast Business Logo -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Comcast_Business_logo.svg/2560px-Comcast_Business_logo.svg.png" 
+                 alt="Comcast Business Logo" 
+                 class="mx-auto h-12 w-auto mb-6"
+                 onerror="this.style.display='none'">
+            
             <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
                 <!-- Main Title -->
                 CB MOBILE QUICK LINKS
             </h1>
             <p class="text-lg text-slate-600 dark:text-slate-400">
                 <!-- Subtitle -->
-                A hub for important mobile resources and activation guides.
+                Team Mando's Hub
             </p>
         </header>
 
-        <!-- Links Section -->
+        <!-- Main Content -->
         <main>
             <!-- CATEGORY 1: Quick Links -->
             <section class="mb-12">
                 <h2 class="text-2xl font-bold border-b-2 border-slate-200 dark:border-slate-700 pb-2 mb-6 text-slate-900 dark:text-white">Quick Links</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <!-- Link Card: Xfinity Mobile Calculator -->
                     <a href="https://www.xfinity.com/learn/mobile/plan/savings-calculator/current/plan?current_carrier=b74e69c4545cf7fc29395289f96240c2&num_lines=3&selected_plan_tier_bin=1&selected_plan_id=e945364017854bfe9f0b1d7ef5344e33&tier_bins=2,3" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg mr-4">
-                                <i data-lucide="calculator" class="text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Xfinity Mobile Calculator</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400">Calculate potential savings on mobile plans.</p>
+                        <div class="flex items-center mb-3"><div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg mr-4"><i data-lucide="calculator" class="text-blue-600 dark:text-blue-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Xfinity Mobile Calculator</h3></div><p class="text-slate-600 dark:text-slate-400">Calculate potential savings on mobile plans.</p>
                     </a>
-
-                    <!-- Link Card: BYOD IMEI Look-up -->
                     <a href="https://xm360.xfinity.com/LookupIMEI" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-green-100 dark:bg-green-900/50 p-2 rounded-lg mr-4">
-                                <i data-lucide="smartphone-cog" class="text-green-600 dark:text-green-400"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">BYOD IMEI Look-up</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400">Check device compatibility with our network.</p>
+                        <div class="flex items-center mb-3"><div class="bg-green-100 dark:bg-green-900/50 p-2 rounded-lg mr-4"><i data-lucide="smartphone-cog" class="text-green-600 dark:text-green-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">BYOD IMEI Look-up</h3></div><p class="text-slate-600 dark:text-slate-400">Check device compatibility with our network.</p>
                     </a>
-
-                    <!-- Link Card: International Travel -->
                     <a href="https://www.xfinity.com/mobile/my-account/international" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-red-100 dark:bg-red-900/50 p-2 rounded-lg mr-4">
-                                <i data-lucide="globe" class="text-red-600 dark:text-red-400"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">International Travel</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400">Find information on international calling and data.</p>
+                        <div class="flex items-center mb-3"><div class="bg-red-100 dark:bg-red-900/50 p-2 rounded-lg mr-4"><i data-lucide="globe" class="text-red-600 dark:text-red-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">International Travel</h3></div><p class="text-slate-600 dark:text-slate-400">Find information on international calling and data.</p>
                     </a>
-                    
-                    <!-- Link Card: Carrier Lookup -->
                     <a href="https://freecarrierlookup.com/" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-sky-100 dark:bg-sky-900/50 p-2 rounded-lg mr-4">
-                                <i data-lucide="phone-forwarded" class="text-sky-600 dark:text-sky-400"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Carrier Lookup</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400">Identify the carrier for a specific phone number.</p>
+                        <div class="flex items-center mb-3"><div class="bg-sky-100 dark:bg-sky-900/50 p-2 rounded-lg mr-4"><i data-lucide="phone-forwarded" class="text-sky-600 dark:text-sky-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Carrier Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Identify the carrier for a specific phone number.</p>
                     </a>
-
-                    <!-- Link Card: Gift Card Lookup -->
                     <a href="https://www.xfinityincentivetracker.com/track" target="_blank" class="group block p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-violet-100 dark:bg-violet-900/50 p-2 rounded-lg mr-4">
-                                <i data-lucide="gift" class="text-violet-600 dark:text-violet-400"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Gift Card Lookup</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400">Track the status of your Xfinity incentive.</p>
+                        <div class="flex items-center mb-3"><div class="bg-violet-100 dark:bg-violet-900/50 p-2 rounded-lg mr-4"><i data-lucide="gift" class="text-violet-600 dark:text-violet-400"></i></div><h3 class="text-lg font-semibold text-slate-900 dark:text-white">Gift Card Lookup</h3></div><p class="text-slate-600 dark:text-slate-400">Track the status of a customer's Xfinity incentive.</p>
                     </a>
                 </div>
             </section>
@@ -119,54 +98,64 @@
             <!-- CATEGORY 2: ESIM Activation -->
             <section class="mb-12">
                 <h2 class="text-2xl font-bold border-b-2 border-slate-200 dark:border-slate-700 pb-2 mb-6 text-slate-900 dark:text-white">ESIM Activation</h2>
-                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 md:p-8 space-y-8">
-                    
-                    <!-- Apple Instructions -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Apple iPhone device models</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400">
-                            <li>Open your phone’s settings app and select <strong>Cellular</strong>.</li>
-                            <li>Select <strong>Add Cellular Plan</strong>.</li>
-                            <li>Select <strong>Enter Details Manually</strong> at the bottom of the screen.</li>
-                            <li>In the <strong>SM-DP+ Address</strong> field, enter <code>gsmacct.vzw.otgeuicc.com</code>.</li>
-                            <li>Leave the <strong>Activation Code</strong> and <strong>Confirmation Code</strong> fields blank.</li>
-                            <li>Select <strong>Next</strong> near the upper right corner of the screen and follow the on-screen instructions.</li>
-                        </ol>
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    <!-- Instructions Column -->
+                    <div class="space-y-8 lg:col-span-2">
+                        <div><h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Apple iPhone device models</h3><ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400"><li>Open your phone’s settings app and select <strong>Cellular</strong>.</li><li>Select <strong>Add Cellular Plan</strong>.</li><li>Select <strong>Enter Details Manually</strong> at the bottom of the screen.</li><li>In the <strong>SM-DP+ Address</strong> field, enter <code>gsmacct.vzw.otgeuicc.com</code>.</li><li>Leave the <strong>Activation Code</strong> and <strong>Confirmation Code</strong> fields blank.</li><li>Select <strong>Next</strong> near the upper right corner of the screen and follow the on-screen instructions.</li></ol></div>
+                        <div><h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Samsung Galaxy device models</h3><ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400"><li>Open the <strong>Camera</strong> app.</li><li>Select <strong>Enter Activation code</strong>.</li><li>Enter <code>LPA:1$gsmacct.vzw.otgeuicc.com$</code>.</li><li>Select <strong>Done</strong>.</li></ol></div>
+                        <div><h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Google Pixel Device Models</h3><ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400"><li>Open the <strong>Camera</strong> app.</li><li>Select <strong>Need help?</strong></li><li>Select <strong>Enter it manually</strong>.</li><li>Enter <code>LPA:1$gsmacct.vzw.otgeuicc.com$</code>.</li><li>Select <strong>Continue</strong>.</li></ol></div>
                     </div>
-
-                    <!-- Samsung Instructions -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Samsung Galaxy device models</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400">
-                            <li>Open the <strong>Camera</strong> app.</li>
-                            <li>Select <strong>Enter Activation code</strong>.</li>
-                            <li>Enter <code>LPA:1$gsmacct.vzw.otgeuicc.com$</code>.</li>
-                            <li>Select <strong>Done</strong>.</li>
-                        </ol>
+                    <!-- QR Code Column -->
+                    <div class="text-center lg:col-span-1">
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Scan for Setup</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">For compatible devices, scan this code with the Camera app to begin.</p>
+                        <img src="http://googleusercontent.com/file_content/5" alt="eSIM Activation QR Code" class="mx-auto rounded-lg shadow-md w-48 h-48">
                     </div>
-
-                    <!-- Google Instructions -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Google Pixel Device Models</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400">
-                            <li>Open the <strong>Camera</strong> app.</li>
-                            <li>Select <strong>Need help?</strong></li>
-                            <li>Select <strong>Enter it manually</strong>.</li>
-                            <li>Enter <code>LPA:1$gsmacct.vzw.otgeuicc.com$</code>.</li>
-                            <li>Select <strong>Continue</strong>.</li>
-                        </ol>
-                    </div>
-
                 </div>
             </section>
 
+            <!-- CATEGORY: AI-Powered Tools -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold border-b-2 border-slate-200 dark:border-slate-700 pb-2 mb-6 text-slate-900 dark:text-white">✨ AI-Powered Tools</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Tool 1: Customer Message Drafter -->
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 md:p-8">
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Customer Message Drafter</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">Enter a topic to generate a professional SMS or email message for a customer.</p>
+                        <div class="space-y-4">
+                            <textarea id="message-prompt" class="w-full p-3 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" rows="2" placeholder="e.g., 'Phone is ready for pickup'"></textarea>
+                            <button id="generate-msg-btn" class="inline-flex items-center justify-center px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-slate-900 transition-colors">Generate Message</button>
+                            <div id="msg-loading-spinner" class="hidden my-4 flex justify-center"><div class="spinner"></div></div>
+                            <div id="msg-result-container" class="hidden relative mt-4 p-4 bg-slate-100 dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600">
+                                <button id="msg-copy-btn" class="absolute top-2 right-2 p-1.5 bg-slate-200 dark:bg-slate-600 rounded-md hover:bg-slate-300 dark:hover:bg-slate-500" title="Copy to clipboard"><i data-lucide="copy" class="h-5 w-5 text-slate-600 dark:text-slate-300"></i></button>
+                                <p id="generated-message" class="whitespace-pre-wrap text-slate-800 dark:text-slate-200"></p>
+                            </div>
+                            <div id="msg-error-message" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg"></div>
+                        </div>
+                    </div>
+                    <!-- Tool 2: Troubleshooting Step Suggester -->
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 md:p-8">
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Troubleshooting Step Suggester</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">Describe a customer's issue to get a list of initial troubleshooting steps.</p>
+                        <div class="space-y-4">
+                            <textarea id="steps-prompt" class="w-full p-3 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none" rows="2" placeholder="e.g., 'cannot connect to data', 'voicemail not working'"></textarea>
+                            <button id="generate-steps-btn" class="inline-flex items-center justify-center px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 dark:focus:ring-offset-slate-900 transition-colors">Suggest Steps</button>
+                            <div id="steps-loading-spinner" class="hidden my-4 flex justify-center"><div class="spinner"></div></div>
+                            <div id="steps-result-container" class="hidden relative mt-4 p-4 bg-slate-100 dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600">
+                                <button id="steps-copy-btn" class="absolute top-2 right-2 p-1.5 bg-slate-200 dark:bg-slate-600 rounded-md hover:bg-slate-300 dark:hover:bg-slate-500" title="Copy to clipboard"><i data-lucide="copy" class="h-5 w-5 text-slate-600 dark:text-slate-300"></i></button>
+                                <div id="generated-steps" class="whitespace-pre-wrap text-slate-800 dark:text-slate-200"></div>
+                            </div>
+                            <div id="steps-error-message" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!-- Footer -->
         <footer class="text-center mt-16 text-slate-500 dark:text-slate-400">
             <p>&copy; <span id="year"></span> Your Company Name. All rights reserved.</p>
         </footer>
-
     </div>
 
     <script>
@@ -175,7 +164,110 @@
 
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        
+        // --- Generic API Call Function ---
+        async function callGemini(prompt, button, loadingSpinner, resultContainer, resultElement, errorElement) {
+            if (!prompt.trim()) {
+                showError("Please enter a topic or issue.", errorElement);
+                return;
+            }
 
+            loadingSpinner.classList.remove('hidden');
+            button.disabled = true;
+            button.classList.add('opacity-50', 'cursor-not-allowed');
+            resultContainer.classList.add('hidden');
+            errorElement.classList.add('hidden');
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
+                const result = await response.json();
+
+                if (result.candidates?.[0]?.content?.parts?.[0]) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    resultElement.innerHTML = text.replace(/\n/g, '<br>'); // Use innerHTML to render line breaks
+                    resultContainer.classList.remove('hidden');
+                } else {
+                    throw new Error("Received an invalid response from the API.");
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                showError("Sorry, something went wrong. Please try again.", errorElement);
+            } finally {
+                loadingSpinner.classList.add('hidden');
+                button.disabled = false;
+                button.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function showError(message, errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+
+        function setupCopyButton(copyBtn, textElement, errorElement) {
+            copyBtn.addEventListener('click', () => {
+                const textToCopy = textElement.innerText; // Use innerText to get formatted text
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    copyBtn.innerHTML = '<i data-lucide="check" class="h-5 w-5 text-green-600 dark:text-green-400"></i>';
+                    lucide.createIcons();
+                    setTimeout(() => {
+                        copyBtn.innerHTML = '<i data-lucide="copy" class="h-5 w-5 text-slate-600 dark:text-slate-300"></i>';
+                        lucide.createIcons();
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                    showError("Failed to copy text to clipboard.", errorElement);
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        // --- Message Drafter Setup ---
+        const generateMsgBtn = document.getElementById('generate-msg-btn');
+        const messagePrompt = document.getElementById('message-prompt');
+        const msgResultContainer = document.getElementById('msg-result-container');
+        const generatedMessage = document.getElementById('generated-message');
+        const msgLoadingSpinner = document.getElementById('msg-loading-spinner');
+        const msgErrorMessage = document.getElementById('msg-error-message');
+        const msgCopyBtn = document.getElementById('msg-copy-btn');
+
+        generateMsgBtn.addEventListener('click', () => {
+            const fullPrompt = `You are a helpful assistant for a Comcast Business Mobile employee. Draft a concise, friendly, and professional SMS message to a customer about the following topic: "${messagePrompt.value.trim()}". The message should be clear and provide a next step if applicable. Do not add a placeholder for the customer's name.`;
+            callGemini(fullPrompt, generateMsgBtn, msgLoadingSpinner, msgResultContainer, generatedMessage, msgErrorMessage);
+        });
+        setupCopyButton(msgCopyBtn, generatedMessage, msgErrorMessage);
+
+        // --- Troubleshooting Steps Setup ---
+        const generateStepsBtn = document.getElementById('generate-steps-btn');
+        const stepsPrompt = document.getElementById('steps-prompt');
+        const stepsResultContainer = document.getElementById('steps-result-container');
+        const generatedSteps = document.getElementById('generated-steps');
+        const stepsLoadingSpinner = document.getElementById('steps-loading-spinner');
+        const stepsErrorMessage = document.getElementById('steps-error-message');
+        const stepsCopyBtn = document.getElementById('steps-copy-btn');
+
+        generateStepsBtn.addEventListener('click', () => {
+            const fullPrompt = `You are an expert mobile support technician for Comcast Business Mobile. A customer is reporting the following issue: "${stepsPrompt.value.trim()}". Provide a numbered list of simple, initial troubleshooting steps an employee can walk the customer through. Keep the steps clear and easy to follow.`;
+            callGemini(fullPrompt, generateStepsBtn, stepsLoadingSpinner, stepsResultContainer, generatedSteps, stepsErrorMessage);
+        });
+        setupCopyButton(stepsCopyBtn, generatedSteps, stepsErrorMessage);
+
+    </script>
 </body>
 </html>
